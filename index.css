@@ -1,0 +1,561 @@
+:root {
+    --main-color: #2196f3;
+    --main-color-alt: #1787e0;
+    --main-transition: 0.3s;
+    --main-padding-top: 100px;
+    --main-padding-bottom: 100px;
+    --section-background: #ececec;
+}
+html {
+    scroll-behavior: smooth;
+}
+body{
+
+
+font-family : 'Work Sans', sans-serif;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /* Small */
+  @media (min-width: 768px) {
+    .container {
+      width: 750px;
+    }
+  }
+  /* Medium */
+  @media (min-width: 992px) {
+    .container {
+      width: 970px;
+    }
+  }
+  /* Large */
+  @media (min-width: 1200px) {
+    .container {
+      width: 1170px;
+    }
+}
+
+.main-title{
+    
+    margin: 100px auto;
+    border: 2px solid black;
+    padding: 10px 20px;
+    font-size: 30px;
+    width: fit-content;
+    position: relative;
+    z-index: 1;
+    transition: var(--main-transition);
+
+}
+.main-title::before{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::after{
+    content: "";
+    width: 12px;
+    height: 12px;
+    background-color: var(--main-color);
+    position: absolute;
+    border-radius: 50%;
+   
+    top: 50%;
+    transform: translateY(-50%);
+}
+.main-title::after{
+    right: -30px;
+}
+    .main-title::before{
+   left: -30px;
+}
+.main-title:hover::before{
+    z-index: -1;
+    animation: left-move 0.5s linear forwards;
+}
+.main-title:hover::after{
+    z-index: -1;
+    animation: right-move 0.5s linear forwards;
+}
+.main-title:hover{
+    color: white;
+    border: 2px solid white;
+    transition-delay: 0.5s;
+}
+/* Start header */
+
+.header {
+    background-color: white;
+    position: relative;
+    -webkit-box-shadow: 0 0 10px #ddd;
+    -moz-box-shadow: 0 0 10px #ddd;
+    box-shadow: 0 0 10px #ddd;
+}
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+
+}
+.header .logo {
+    color: var(--main-color);
+    font-size: 30px;
+    font-weight: bold;
+    height: 72px;
+    display: flex;
+    align-items: center;
+    
+
+}
+@media (max-width : 767px) {
+    .header .logo {
+        width: 100%;
+        
+        display: flex;
+       justify-content: center;
+    }
+    
+}
+@media (max-width : 767px) {
+    .header .nav-main {
+        margin: auto;
+    }
+    
+}
+.header .nav-main {
+    display: flex;
+}
+.header .nav-main > li > a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 72px;
+    position: relative;
+    color: black;
+    padding: 0 30px;
+    transition: var(--main-transition);
+    overflow: hidden;
+
+}
+@media (max-width : 767px) {
+    .header .nav-main > li > a {
+        padding: 10px;
+        font-size: 14px;
+        height: 40px;
+    }
+    
+}
+.header .nav-main > li > a::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    background-color: var(--main-color);
+    top: 0;
+    left: -100%;
+    transition: var(--main-transition);
+}
+.header .nav-main > li > a:hover {
+    color: var(--main-color);
+    background-color: #fafafa;
+
+}
+.header .nav-main > li > a:hover::before {
+    left: 0;
+}
+/* End header */
+    /* Start landing */
+    .landing {
+     position: relative;
+    }
+    .landing::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ececec;
+        z-index: -1;
+        transform: skewY(-7deg);
+        transform-origin: top left;
+    }
+    .landing .container{
+        min-height: calc(100vh - 72px);
+        display: flex;
+        align-items: center;
+        padding-bottom: 0px;
+        
+    }
+    .landing .text {
+        flex: 1;
+       
+    }
+    .landing .text h1 {
+     font-size: 55px;
+     font-weight: bold;
+     margin: 0;
+     letter-spacing: -2px;
+    }
+    .landing .text p{
+    font-size: 27px;
+    line-height: 1.7;
+    margin: 5px 0 0;
+    color: #666;
+    }
+    @media (max-width :991px) {
+        .landing .text {
+            text-align: center;
+        }
+        
+    }
+    @media (max-width :991px) {
+        .landing .text p {
+            margin: 10px auto;
+        }
+        
+    }
+    @media (max-width :991px) {
+        .landing .text h1 {
+            font-size: 28px;
+        }
+        }
+        
+        @media (max-width :991px) {
+            .landing .text p {
+                font-size: 18px;
+            }
+            }
+    .landing .image img {
+        position: relative;
+        width: 500px;
+        max-width: 100%;
+        animation: up-and-down 2s linear infinite;
+        
+    }
+    @media (max-width :991px) {
+        .landing .image img {
+            display: none;
+        }
+        
+    }
+   
+    .landing .go-down {
+        color: var(--main-color);
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: var(--main-transition);
+      }
+      .landing .go-down:hover {
+        color: var(--main-color-alt);
+      }
+      .landing .go-down i {
+        animation: bouncing 1.5s infinite;
+       
+      }
+    /* end landing */
+
+@keyframes up-and-down {
+    0%,100% {
+        top: 0;
+    }
+    50%{
+        top: -50px;
+    }
+    
+}
+@keyframes bouncing {
+    0%,10%,20%,50%,80%,100% {
+        transform: translateY(0);
+       
+    }
+    40%,60% {
+            transform: translateY(-20px);
+    }
+    
+}
+@keyframes left-move {
+    50% {
+        left: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        left: 0;
+        border-radius: 0;
+        width: 50%;
+        height: 100%;
+    }
+    
+}
+@keyframes right-move {
+    50% {
+        right: 0;
+        width: 12px;
+        height: 12px;
+    }
+    100%{
+        right: 0;
+        border-radius: 0;
+        width: 50%;
+        height: 100%;
+    }
+    
+}
+.levels {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+  }
+  .levels .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 40px;
+    
+  }
+  .levels .box {
+    box-shadow: 0 2px 15px rgb(0 0 0 / 10%);
+    background-color: white;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: transform var(--main-transition), box-shadow var(--main-transition);
+    
+  }
+  .levels .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
+  }
+  .levels .box img {
+    width: 100%;
+    max-width: 100%;
+    
+  }
+  .levels .box .content {
+    padding: 20px;
+   
+  }
+  .levels .box .content h3 {
+    margin: 0;
+   
+  }
+  .levels .box .content p {
+    margin: 10px 0 0;
+    line-height: 1.5;
+    color: #777;
+    
+  }
+  .levels .box .info {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .levels .box .info a {
+    color: var(--main-color);
+    font-weight: bold;
+  }
+  .levels .box .info i {
+    color: var(--main-color);
+  }
+  .levels .box:hover .info i {
+    animation: moving-arrow 0.6s linear infinite;
+  }
+
+
+
+  .skills{
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: white;
+  }
+  .skills .container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 40px;
+
+  }
+  .skills .box {
+    text-align: center;
+    border: 1px solid #ccc;
+
+
+  }
+  .skills .box h2 {
+    position: relative;
+    font-size: 30px;
+    margin: auto;
+    width: fit-content;
+
+  }
+  .skills .box h2::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+    left: 15px;
+    height: 5px;
+   
+    width: calc(100% - 30px);
+    
+}
+.skills .box p {
+    line-height: 2;
+    font-size: 20px;
+    margin: 30px 0;
+    padding: 25px;
+    color: #777;
+    
+}
+.skills .box a {
+    display: block;
+    border: 3px solid transparent;
+    width: fit-content;
+    margin: 0 auto 30px;
+    font-weight: bold;
+    font-size: 20px;
+    padding: 10px 30px;
+    border-radius: 6px;
+    transition: var(--main-transition);
+    
+}
+  .skills .box .img-holder {
+    position: relative;
+    overflow: hidden;
+    
+
+  }
+
+
+  .skills .box .img-holder::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+}
+.skills .box .img-holder::after{
+    content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 100px 500px;
+  border-color: transparent transparent white transparent;
+  transition: var(--main-transition);
+
+}
+  .skills .box .img-holder img {
+    max-width: 100%;
+   
+    
+}
+.skills .box:hover .img-holder::after {
+    border-width: 170px 500px 170px 0px;
+}
+.skills .arduino .img-holder::before{
+background-color: transparent;
+}
+.skills .arduino h2::after{
+    background-color: rgb(248 106 81 / 40%);
+}
+.skills .arduino a {
+   color: rgb(248 106 81 / 40%);
+   border-color:rgb(248 106 81 / 40%);
+   background: linear-gradient(to right,rgb(248 106 81 / 40%) 50%, white 50%);
+   background-size: 200% 100%;
+   background-position: right bottom;
+}
+.skills .box:hover a{
+    background-position: left bottom;
+    color: white;
+}
+.skills .coding .img-holder::before{
+    background-color: transparent;
+    }
+    .skills .coding h2::after{
+        background-color: rgba(0, 166, 255, 0.5);
+    }
+    .skills .coding a {
+       color: rgba(0, 166, 255, 0.5);
+       border-color: rgba(0, 166, 255, 0.5);
+       background: linear-gradient(to right,rgba(0, 166, 255, 0.5) 50%, white 50%);
+       background-size: 200% 100%;
+       background-position: right bottom;
+    }
+    .skills .design .img-holder::before{
+        background-color: transparent;
+        }
+        .skills .design h2::after{
+            background-color: rgba(0, 87, 33, 0.6);
+        }
+        .skills .design a {
+           color: rgba(0, 87, 33, 0.6);
+           border-color: rgba(0, 87, 33, 0.6);
+           background: linear-gradient(to right,rgba(0, 87, 33, 0.6) 50%, white 50%);
+           background-size: 200% 100%;
+           background-position: right bottom;
+        }
+        .skills .int .img-holder::before{
+            background-color: transparent;
+            }
+            .skills .int h2::after{
+                background-color: rgba(38, 0, 255, 0.4);
+            }
+            .skills .int a {
+               color: rgba(38, 0, 255, 0.4);
+               border-color: rgba(38, 0, 255, 0.4);
+               background: linear-gradient(to right,rgba(38, 0, 255, 0.4) 50%, white 50%);
+               background-size: 200% 100%;
+               background-position: right bottom;
+            }
+            .skills .web .img-holder::before{
+                background-color: transparent;
+                }
+                .skills .web h2::after{
+                    background-color: blue ;
+                }
+                .skills .web a {
+                   color: blue ;
+                   border-color: blue ;
+                   background: linear-gradient(to right,blue 50%, white 50%);
+                   background-size: 200% 100%;
+                   background-position: right bottom;
+                }
+                .skills .apps .img-holder::before{
+                    background-color: transparent;
+                    }
+                    .skills .apps h2::after{
+                        background-color: red;
+                    }
+                    .skills .apps a {
+                       color: red;
+                       border-color: red;
+                       background: linear-gradient(to right,red 50%, white 50%);
+                       background-size: 200% 100%;
+                       background-position: right bottom;
+                    }
